@@ -1,0 +1,1498 @@
+[
+  {
+    "date": "2018-10-11",
+    "name": "BERT",
+    "org": "Google",
+    "original_name": "BERT",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2019-02-14",
+    "name": "GPT-2",
+    "org": "OpenAI",
+    "original_name": "GPT-2",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2021-01-05",
+    "name": "CLIP",
+    "org": "OpenAI",
+    "original_name": "CLIP",
+    "category": "image",
+    "open_weights": ""
+  },
+  {
+    "date": "2021-07-14",
+    "name": "DALL-E Mini",
+    "org": "Hugging Face",
+    "original_name": "DALL-E Mini",
+    "category": "image",
+    "open_weights": ""
+  },
+  {
+    "date": "2022-08-22",
+    "name": "Stable Diffusion",
+    "org": "Stability AI",
+    "original_name": "Stable Diffusion",
+    "category": "image",
+    "open_weights": ""
+  },
+  {
+    "date": "2022-09-21",
+    "name": "Whisper",
+    "org": "OpenAI",
+    "original_name": "Whisper",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2022-11-30",
+    "name": "GPT-3",
+    "org": "OpenAI",
+    "original_name": "ChatGPT (GPT-3.5)",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-01-01",
+    "name": "ElevenLabs v1",
+    "org": "ElevenLabs",
+    "original_name": "ElevenLabs v1",
+    "category": "audio",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-01-30",
+    "name": "Spark 1.0 正式版",
+    "org": "讯飞",
+    "original_name": "Spark 1.0 正式版",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-02-24",
+    "name": "LLaMA",
+    "org": "Meta",
+    "original_name": "LLaMA",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-03-13",
+    "name": "Alpaca",
+    "org": "Stanford",
+    "original_name": "Alpaca",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-03-16",
+    "name": "ERNIE Bot 3.5",
+    "org": "百度",
+    "original_name": "ERNIE Bot 3.5",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-03-27",
+    "name": "GPT4All",
+    "org": "Nomic AI",
+    "original_name": "GPT4All",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-03-30",
+    "name": "Vicuna",
+    "org": "LMSYS",
+    "original_name": "Vicuna",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-04-07",
+    "name": "Bark",
+    "org": "Suno",
+    "original_name": "Bark",
+    "category": "audio",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-04-12",
+    "name": "Dolly 2.0",
+    "org": "Databricks",
+    "original_name": "Dolly 2.0",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-04-17",
+    "name": "LLaVA",
+    "org": "Microsoft",
+    "original_name": "LLaVA",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-04-17",
+    "name": "RedPajama",
+    "org": "Together",
+    "original_name": "RedPajama",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-05-05",
+    "name": "MPT-7B",
+    "org": "MosaicML",
+    "original_name": "MPT-7B",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-05-24",
+    "name": "Falcon",
+    "org": "TII",
+    "original_name": "Falcon",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-06-01",
+    "name": "ERNIE-Vil 2.0",
+    "org": "百度",
+    "original_name": "ERNIE-Vil 2.0",
+    "category": "image",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-06-01",
+    "name": "ElevenLabs v2",
+    "org": "ElevenLabs",
+    "original_name": "ElevenLabs v2",
+    "category": "audio",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-07-18",
+    "name": "LLaMA 2",
+    "org": "Meta",
+    "original_name": "LLaMA 2",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-08-01",
+    "name": "Kling 1.0",
+    "org": "Kuaishou",
+    "original_name": "Kling 1.0 (可灵-1.0)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-08-15",
+    "name": "Spark 2.0",
+    "org": "讯飞",
+    "original_name": "Spark 2.0",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-08-24",
+    "name": "Llama",
+    "org": "Meta",
+    "original_name": "CodeLlama",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-09-01",
+    "name": "Stable Audio 1.0",
+    "org": "Stability AI",
+    "original_name": "Stable Audio 1.0",
+    "category": "audio",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-09-25",
+    "name": "Qwen",
+    "org": "阿里",
+    "original_name": "Qwen-VL-Chat",
+    "category": "multimodal",
+    "open_weights": "True"
+  },
+  {
+    "date": "2023-09-27",
+    "name": "Mistral",
+    "org": "Mistral",
+    "original_name": "Mistral 7B",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-10-12",
+    "name": "ERNIE Bot 4.0 正式版",
+    "org": "百度",
+    "original_name": "ERNIE Bot 4.0 正式版",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-10-25",
+    "name": "Zephyr",
+    "org": "Hugging Face",
+    "original_name": "Zephyr",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2023-11-01",
+    "name": "Pika 1.0",
+    "org": "Pika",
+    "original_name": "Pika 1.0",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-11-01",
+    "name": "Yi-34B",
+    "org": "零一万物",
+    "original_name": "Yi-34B",
+    "category": "text",
+    "open_weights": "True"
+  },
+  {
+    "date": "2023-11-06",
+    "name": "GPT-4",
+    "org": "OpenAI",
+    "original_name": "GPT-4-Turbo",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2023-11-29",
+    "name": "Stable Video Diffusion",
+    "org": "Stability AI",
+    "original_name": "Stable Video Diffusion (SVD)",
+    "category": "video",
+    "open_weights": "True"
+  },
+  {
+    "date": "2023-12-11",
+    "name": "Mixtral 8x7B",
+    "org": "Mistral",
+    "original_name": "Mixtral 8x7B",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-01-01",
+    "name": "ElevenLabs v3",
+    "org": "ElevenLabs",
+    "original_name": "ElevenLabs v3",
+    "category": "audio",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-01-01",
+    "name": "MiniMax-Text-01",
+    "org": "MiniMax",
+    "original_name": "MiniMax-Text-01",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-01-01",
+    "name": "Yi-6B",
+    "org": "零一万物",
+    "original_name": "Yi-6B",
+    "category": "text",
+    "open_weights": "True"
+  },
+  {
+    "date": "2024-02-01",
+    "name": "Runway Gen-3 Alpha",
+    "org": "Runway",
+    "original_name": "Runway Gen-3 Alpha",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-02-01",
+    "name": "Stable Audio 2.0",
+    "org": "Stability AI",
+    "original_name": "Stable Audio 2.0",
+    "category": "audio",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-02-15",
+    "name": "Sora",
+    "org": "OpenAI",
+    "original_name": "Sora",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-02-21",
+    "name": "Gemma",
+    "org": "Google",
+    "original_name": "Gemma",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-03-01",
+    "name": "FLUX.1 Pro",
+    "org": "Black Forest Labs",
+    "original_name": "FLUX.1 Pro",
+    "category": "image",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-03-01",
+    "name": "Kling 1.5",
+    "org": "Kuaishou",
+    "original_name": "Kling 1.5 (可灵-1.5)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-03-01",
+    "name": "Stable Video Diffusion 1.1",
+    "org": "Stability AI",
+    "original_name": "Stable Video Diffusion 1.1 (SVD 1.1)",
+    "category": "video",
+    "open_weights": "True"
+  },
+  {
+    "date": "2024-03-01",
+    "name": "Veo 1",
+    "org": "Google",
+    "original_name": "Veo 1",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-03-01",
+    "name": "Wan 1.0 (通义万相-1.0)",
+    "org": "阿里",
+    "original_name": "Wan 1.0 (通义万相-1.0)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-03-17",
+    "name": "Grok",
+    "org": "xAI",
+    "original_name": "Grok-1",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-03-18",
+    "name": "Kimi K1",
+    "org": "月之暗面",
+    "original_name": "Kimi K1.5",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-04-01",
+    "name": "ERNIE 4.0 Pro",
+    "org": "百度",
+    "original_name": "ERNIE 4.0 Pro",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-04-01",
+    "name": "Pika 2.0",
+    "org": "Pika",
+    "original_name": "Pika 2.0",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-04-01",
+    "name": "Stable Video Diffusion XT",
+    "org": "Stability AI",
+    "original_name": "Stable Video Diffusion XT (SVD 1.2)",
+    "category": "video",
+    "open_weights": "True"
+  },
+  {
+    "date": "2024-04-18",
+    "name": "LLaMA 3",
+    "org": "Meta",
+    "original_name": "LLaMA 3",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-04-23",
+    "name": "Phi-3",
+    "org": "Microsoft",
+    "original_name": "Phi-3",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-05-01",
+    "name": "Yi-34B-Chat",
+    "org": "零一万物",
+    "original_name": "Yi-34B-Chat",
+    "category": "text",
+    "open_weights": "True"
+  },
+  {
+    "date": "2024-05-09",
+    "name": "Hailuo AI 1.0",
+    "org": "MiniMax",
+    "original_name": "Hailuo AI 1.0 (海螺-1.0)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-06-01",
+    "name": "Yi-1.5",
+    "org": "零一万物",
+    "original_name": "Yi-1.5",
+    "category": "text",
+    "open_weights": "True"
+  },
+  {
+    "date": "2024-06-12",
+    "name": "Stable Diffusion 3.0",
+    "org": "Stability AI",
+    "original_name": "Stable Diffusion 3.0",
+    "category": "image",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-06-27",
+    "name": "Gemma 2",
+    "org": "Google",
+    "original_name": "Gemma 2",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-06-27",
+    "name": "Spark 3.0",
+    "org": "讯飞",
+    "original_name": "Spark 3.0",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-07-05",
+    "name": "ERNIE-Speed",
+    "org": "百度",
+    "original_name": "ERNIE-Speed",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-07-23",
+    "name": "LLaMA 3.1",
+    "org": "Meta",
+    "original_name": "LLaMA 3.1",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-07-23",
+    "name": "Llama 3.1",
+    "org": "Meta",
+    "original_name": "Llama 3.1",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-08-01",
+    "name": "FLUX",
+    "org": "Black Forest Labs",
+    "original_name": "FLUX",
+    "category": "video",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-08-01",
+    "name": "FLUX.1 Dev",
+    "org": "Black Forest Labs",
+    "original_name": "FLUX.1 Dev",
+    "category": "image",
+    "open_weights": "True"
+  },
+  {
+    "date": "2024-08-01",
+    "name": "FLUX.1 Schnell",
+    "org": "Black Forest Labs",
+    "original_name": "FLUX.1 Schnell",
+    "category": "image",
+    "open_weights": "True"
+  },
+  {
+    "date": "2024-08-01",
+    "name": "Pika 2.1",
+    "org": "Pika",
+    "original_name": "Pika 2.1",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-09-01",
+    "name": "Veo 2",
+    "org": "Google",
+    "original_name": "Veo 2",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-09-20",
+    "name": "Wan 2.0 (通义万相-2.0)",
+    "org": "阿里",
+    "original_name": "Wan 2.0 (通义万相-2.0)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-09-25",
+    "name": "Llama 3.2",
+    "org": "Meta",
+    "original_name": "Llama 3.2",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-10-01",
+    "name": "Pika Pure",
+    "org": "Pika",
+    "original_name": "Pika Pure",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-10-15",
+    "name": "Hailuo AI-2.0",
+    "org": "MiniMax",
+    "original_name": "Hailuo AI-2.0 (海螺-2.0)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-10-20",
+    "name": "Kling 2.0",
+    "org": "Kuaishou",
+    "original_name": "Kling 2.0 (可灵-2.0)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-11-01",
+    "name": "HyperCLOVA X SEED Think",
+    "org": "Naver",
+    "original_name": "HyperCLOVA X SEED Think (32B)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2024-11-12",
+    "name": "ERNIE-4.5-Turbo",
+    "org": "百度",
+    "original_name": "ERNIE-4.5-Turbo",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-11-14",
+    "name": "Sora Turbo",
+    "org": "OpenAI",
+    "original_name": "Sora Turbo",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-12-20",
+    "name": "Hailuo AI-2.3",
+    "org": "MiniMax",
+    "original_name": "Hailuo AI-2.3 (海螺-2.3)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2024-12-22",
+    "name": "Grok 2",
+    "org": "xAI",
+    "original_name": "Grok 2 (Dec '24)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-01-01",
+    "name": "MiniMax-Text-02",
+    "org": "MiniMax",
+    "original_name": "MiniMax-Text-02",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-01-01",
+    "name": "Spark 4.0 正式版",
+    "org": "讯飞",
+    "original_name": "Spark 4.0 正式版",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-01-01",
+    "name": "Stable Diffusion 3.5 Medium",
+    "org": "Stability AI",
+    "original_name": "Stable Diffusion 3.5 Medium",
+    "category": "image",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-01-01",
+    "name": "Step-2-Video",
+    "org": "StepFun",
+    "original_name": "Step-2-Video",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-01-09",
+    "name": "EXAONE 4.0 32B",
+    "org": "LG AI Research",
+    "original_name": "EXAONE 4.0 32B (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-01-09",
+    "name": "Exaone 4.0 1.2B",
+    "org": "LG AI Research",
+    "original_name": "Exaone 4.0 1.2B (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-01-09",
+    "name": "K-EXAONE",
+    "org": "LG AI Research",
+    "original_name": "K-EXAONE (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-01-09",
+    "name": "K2 Think V2",
+    "org": "MBZUAI Institute of Foundation Models",
+    "original_name": "K2 Think V2",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-01-09",
+    "name": "K2-V2",
+    "org": "MBZUAI Institute of Foundation Models",
+    "original_name": "K2-V2 (high)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-01-20",
+    "name": "DeepSeek",
+    "org": "DeepSeek",
+    "original_name": "DeepSeek-R1",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-01-28",
+    "name": "Sonar Reasoning",
+    "org": "Perplexity",
+    "original_name": "Sonar Reasoning",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-02-05",
+    "name": "Wan 2.1 (通义万相-2.1)",
+    "org": "阿里",
+    "original_name": "Wan 2.1 (通义万相-2.1)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-02-05",
+    "name": "Wan 2.1-1.3B",
+    "org": "阿里",
+    "original_name": "Wan 2.1-1.3B",
+    "category": "video",
+    "open_weights": "True"
+  },
+  {
+    "date": "2025-02-20",
+    "name": "Wan 2.1-I2V",
+    "org": "阿里",
+    "original_name": "Wan 2.1-I2V",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-02-24",
+    "name": "Claude 3.7",
+    "org": "Anthropic",
+    "original_name": "Claude 3.7 Sonnet (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-02-28",
+    "name": "Hailuo AI-Ilya",
+    "org": "MiniMax",
+    "original_name": "Hailuo AI-Ilya (海螺-Ilya)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-03-05",
+    "name": "QwQ",
+    "org": "阿里",
+    "original_name": "QwQ 32B",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-03-10",
+    "name": "Qwen 2",
+    "org": "阿里",
+    "original_name": "Qwen2-VL-Max",
+    "category": "multimodal",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-03-11",
+    "name": "Sonar Reasoning Pro",
+    "org": "Perplexity",
+    "original_name": "Sonar Reasoning Pro",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-03-15",
+    "name": "JEST-B 24B",
+    "org": "字节跳动",
+    "original_name": "JEST-B 24B",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-03-19",
+    "name": "Llama 3.1 Nemotron Nano 4B v1.1",
+    "org": "NVIDIA",
+    "original_name": "Llama 3.1 Nemotron Nano 4B v1.1 (Reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-03-19",
+    "name": "Llama 3.1 Nemotron Ultra 253B v1",
+    "org": "NVIDIA",
+    "original_name": "Llama 3.1 Nemotron Ultra 253B v1 (Reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-03-19",
+    "name": "o-series",
+    "org": "OpenAI",
+    "original_name": "o1-pro",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-04-01",
+    "name": "ERNIE 5.0 正式版",
+    "org": "百度",
+    "original_name": "ERNIE 5.0 正式版",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-04-01",
+    "name": "Kimi",
+    "org": "月之暗面",
+    "original_name": "Kimi-VL-72B",
+    "category": "multimodal",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-04-01",
+    "name": "Kling 2.1",
+    "org": "Kuaishou",
+    "original_name": "Kling 2.1 (可灵-2.1)",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-04-01",
+    "name": "Step-3",
+    "org": "StepFun",
+    "original_name": "Step-3",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-04-01",
+    "name": "Tri-21B-think Preview",
+    "org": "Trillion Labs",
+    "original_name": "Tri-21B-think Preview",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-04-16",
+    "name": "o4-mini (high)",
+    "org": "OpenAI",
+    "original_name": "o4-mini (high)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-05-01",
+    "name": "Spark 4.0 Ultra",
+    "org": "讯飞",
+    "original_name": "Spark 4.0 Ultra",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-05-01",
+    "name": "Veo 3",
+    "org": "Google",
+    "original_name": "Veo 3",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-05-16",
+    "name": "Grok 3",
+    "org": "xAI",
+    "original_name": "Grok 3 mini Reasoning (high)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-05-28",
+    "name": "DeepSeek R1",
+    "org": "DeepSeek",
+    "original_name": "DeepSeek R1 0528 (May '25)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-06-01",
+    "name": "CogView-4",
+    "org": "智谱AI",
+    "original_name": "CogView-4",
+    "category": "image",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-06-01",
+    "name": "ERNIE-Video-01",
+    "org": "百度",
+    "original_name": "ERNIE-Video-01",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-06-01",
+    "name": "Runway Gen-4",
+    "org": "Runway",
+    "original_name": "Runway Gen-4",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-06-01",
+    "name": "Step-3V",
+    "org": "StepFun",
+    "original_name": "Step-3V",
+    "category": "multimodal",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-06-01",
+    "name": "Tri-21B-Think",
+    "org": "Trillion Labs",
+    "original_name": "Tri-21B-Think",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-06-15",
+    "name": "LFM2.5-1.2B-Thinking",
+    "org": "Liquid AI",
+    "original_name": "LFM2.5-1.2B-Thinking",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-06-15",
+    "name": "Qwen 2.5",
+    "org": "阿里",
+    "original_name": "Qwen2.5-VL-Max",
+    "category": "multimodal",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-06-19",
+    "name": "Nova 2.0 Lite",
+    "org": "Amazon",
+    "original_name": "Nova 2.0 Lite (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-06-19",
+    "name": "Nova 2.0 Pro Preview",
+    "org": "Amazon",
+    "original_name": "Nova 2.0 Pro Preview (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-07-23",
+    "name": "Llama 4",
+    "org": "Meta",
+    "original_name": "Llama 4",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-07-25",
+    "name": "GPT-4o",
+    "org": "OpenAI",
+    "original_name": "GPT-4o-2025-07-25",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-08-01",
+    "name": "Apriel-v1.5-15B-Thinker",
+    "org": "ServiceNow",
+    "original_name": "Apriel-v1.5-15B-Thinker",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-08-01",
+    "name": "Jamba Reasoning 3B",
+    "org": "AI21 Labs",
+    "original_name": "Jamba Reasoning 3B",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-08-01",
+    "name": "Step-4",
+    "org": "StepFun",
+    "original_name": "Step-4",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-08-21",
+    "name": "Claude 4.1",
+    "org": "Anthropic",
+    "original_name": "Claude 4.1 Opus (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-09-01",
+    "name": "Cogito v2.1",
+    "org": "Deep Cogito",
+    "original_name": "Cogito v2.1 (Reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-09-01",
+    "name": "Spark 5.0",
+    "org": "讯飞",
+    "original_name": "Spark 5.0",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-09-05",
+    "name": "Kimi K2",
+    "org": "月之暗面",
+    "original_name": "Kimi K2 0905",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-09-10",
+    "name": "EXAONE 4.5 33B",
+    "org": "LG AI Research",
+    "original_name": "EXAONE 4.5 33B (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-09-12",
+    "name": "DeepSeek V3.1",
+    "org": "DeepSeek",
+    "original_name": "DeepSeek V3.1 Terminus (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-09-24",
+    "name": "Gemini 2",
+    "org": "Google",
+    "original_name": "Gemini 2.5 Flash Preview (Sep '25) (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-10-01",
+    "name": "MiniMax-Video-01",
+    "org": "MiniMax",
+    "original_name": "MiniMax-Video-01",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-10-01",
+    "name": "Stable Diffusion 4.0",
+    "org": "Stability AI",
+    "original_name": "Stable Diffusion 4.0",
+    "category": "image",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-10-08",
+    "name": "Gemma 4",
+    "org": "Google",
+    "original_name": "Gemma 4 26B A4B (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-10-13",
+    "name": "Sarvam M",
+    "org": "Sarvam",
+    "original_name": "Sarvam M (Reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-10-17",
+    "name": "Granite 3.3 8B",
+    "org": "IBM",
+    "original_name": "Granite 3.3 8B (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-10-22",
+    "name": "Claude 4.5",
+    "org": "Anthropic",
+    "original_name": "Claude Opus 4.5 (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-10-28",
+    "name": "DeepHermes 3 - Llama-3.1 8B Preview",
+    "org": "Nous Research",
+    "original_name": "DeepHermes 3 - Llama-3.1 8B Preview (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-10-28",
+    "name": "DeepHermes 3 - Mistral 24B Preview",
+    "org": "Nous Research",
+    "original_name": "DeepHermes 3 - Mistral 24B Preview (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-10-28",
+    "name": "Hermes 4 - Llama-3.1 405B",
+    "org": "Nous Research",
+    "original_name": "Hermes 4 - Llama-3.1 405B (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-10-28",
+    "name": "Hermes 4 - Llama-3.1 70B",
+    "org": "Nous Research",
+    "original_name": "Hermes 4 - Llama-3.1 70B (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-10-31",
+    "name": "GLM-4",
+    "org": "智谱AI",
+    "original_name": "GLM-4.7 (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-11-01",
+    "name": "Apriel-v1.6-15B-Thinker",
+    "org": "ServiceNow",
+    "original_name": "Apriel-v1.6-15B-Thinker",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-11-04",
+    "name": "Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort)",
+    "org": "Anthropic",
+    "original_name": "Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-11-04",
+    "name": "Claude Sonnet 4.6 (Non-reasoning, High Effort)",
+    "org": "Anthropic",
+    "original_name": "Claude Sonnet 4.6 (Non-reasoning, High Effort)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-11-04",
+    "name": "Claude Sonnet 4.6 (Non-reasoning, Low Effort)",
+    "org": "Anthropic",
+    "original_name": "Claude Sonnet 4.6 (Non-reasoning, Low Effort)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-11-20",
+    "name": "豆包",
+    "org": "字节跳动",
+    "original_name": "Doubao-4.0",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-11-20",
+    "name": "Motif-2-12.7B-Reasoning",
+    "org": "Motif Technologies",
+    "original_name": "Motif-2-12.7B-Reasoning",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2025-12-01",
+    "name": "Sora Pro",
+    "org": "OpenAI",
+    "original_name": "Sora Pro",
+    "category": "video",
+    "open_weights": "False"
+  },
+  {
+    "date": "2025-12-09",
+    "name": "Devstral 2",
+    "org": "Mistral",
+    "original_name": "Devstral 2",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-01-01",
+    "name": "ERNIE 5.0 Thinking Preview",
+    "org": "百度",
+    "original_name": "ERNIE 5.0 Thinking Preview",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-01-08",
+    "name": "Llama 3.3 Nemotron Super 49B v1",
+    "org": "NVIDIA",
+    "original_name": "Llama 3.3 Nemotron Super 49B v1 (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-01-08",
+    "name": "NVIDIA Nemotron Nano 9B V2",
+    "org": "NVIDIA",
+    "original_name": "NVIDIA Nemotron Nano 9B V2 (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-01-26",
+    "name": "Qwen 3",
+    "org": "阿里",
+    "original_name": "Qwen3 Next 80B A3B (Reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-01-28",
+    "name": "R1 1776",
+    "org": "Perplexity",
+    "original_name": "R1 1776",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-01-30",
+    "name": "Claude 4",
+    "org": "Anthropic",
+    "original_name": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-01-31",
+    "name": "Olmo 3 32B Think",
+    "org": "Allen Institute for AI",
+    "original_name": "Olmo 3 32B Think",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-01-31",
+    "name": "Olmo 3 7B Think",
+    "org": "Allen Institute for AI",
+    "original_name": "Olmo 3 7B Think",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-02-01",
+    "name": "Trinity Large Thinking",
+    "org": "Arcee AI",
+    "original_name": "Trinity Large Thinking",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-02-06",
+    "name": "Nova 2.0 Omni",
+    "org": "Amazon",
+    "original_name": "Nova 2.0 Omni (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-02-10",
+    "name": "DeepSeek V3.2",
+    "org": "DeepSeek",
+    "original_name": "DeepSeek V3.2 Exp (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-02-14",
+    "name": "Mistral Small",
+    "org": "Mistral",
+    "original_name": "Mistral Small 4 (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-02-18",
+    "name": "NVIDIA Nemotron 3 Nano 30B A3B",
+    "org": "NVIDIA",
+    "original_name": "NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-02-18",
+    "name": "NVIDIA Nemotron 3 Super 120B A12B",
+    "org": "NVIDIA",
+    "original_name": "NVIDIA Nemotron 3 Super 120B A12B (Reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-02-27",
+    "name": "Solar Pro 2",
+    "org": "Upstage",
+    "original_name": "Solar Pro 2 (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-03-03",
+    "name": "Kimi K2.5",
+    "org": "月之暗面",
+    "original_name": "Kimi K2.5 (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-03-17",
+    "name": "GLM",
+    "org": "智谱AI",
+    "original_name": "GLM 5V Turbo (Reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-03-17",
+    "name": "GLM-5",
+    "org": "智谱AI",
+    "original_name": "GLM-5.1 (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-03-20",
+    "name": "Grok 4",
+    "org": "xAI",
+    "original_name": "Grok 4.20 0309 v2 (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-03-25",
+    "name": "Hy3-preview",
+    "org": "腾讯",
+    "original_name": "Hy3-preview (Reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-04-07",
+    "name": "Gemini 3",
+    "org": "Google",
+    "original_name": "Gemini 3 Deep Think",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-04-09",
+    "name": "Llama Nemotron Super 49B v1.5",
+    "org": "NVIDIA",
+    "original_name": "Llama Nemotron Super 49B v1.5 (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-04-14",
+    "name": "Olmo 3.1 32B Think",
+    "org": "Allen Institute for AI",
+    "original_name": "Olmo 3.1 32B Think",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-04-14",
+    "name": "GPT-6",
+    "org": "OpenAI",
+    "original_name": "GPT-6",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2026-04-16",
+    "name": "Qwen 3.6",
+    "org": "阿里",
+    "original_name": "Qwen 3.6-35B-A3B",
+    "category": "text",
+    "open_weights": "True"
+  },
+  {
+    "date": "2026-04-17",
+    "name": "Solar Open 100B",
+    "org": "Upstage",
+    "original_name": "Solar Open 100B (Reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-04-21",
+    "name": "MiMo-V2-Flash",
+    "org": "小米",
+    "original_name": "MiMo-V2-Flash (Non-reasoning)",
+    "category": "reasoning",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-05-01",
+    "name": "Gemini 3.5",
+    "org": "Google",
+    "original_name": "Gemini 3.5 Flash",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2026-05-01",
+    "name": "Qwen 3.7",
+    "org": "阿里",
+    "original_name": "Qwen 3.7",
+    "category": "text",
+    "open_weights": ""
+  },
+  {
+    "date": "2026-05-01",
+    "name": "文心 ERNIE 5.1",
+    "org": "百度",
+    "original_name": "文心 ERNIE 5.1",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2026-05-01",
+    "name": "星火 V4",
+    "org": "讯飞",
+    "original_name": "星火 V4",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2026-05-01",
+    "name": "混元 3 Preview",
+    "org": "腾讯",
+    "original_name": "混元 3 Preview",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2026-05-01",
+    "name": "Seed",
+    "org": "字节跳动",
+    "original_name": "豆包 Seed 2.0 Pro",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2026-05-26",
+    "name": "GPT-5",
+    "org": "OpenAI",
+    "original_name": "GPT-5.6 (曝光)",
+    "category": "text",
+    "open_weights": "False"
+  },
+  {
+    "date": "2026-05-29",
+    "name": "Claude 4.8",
+    "org": "Anthropic",
+    "original_name": "Claude Opus 4.8",
+    "category": "text",
+    "open_weights": "False"
+  }
+]

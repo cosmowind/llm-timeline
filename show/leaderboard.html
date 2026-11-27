@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 AI 风云榜 - 各公司排名变化</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0c0c1d, #1a1a3e, #2d1b69);
+            color: white;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #f39c12, #e74c3c, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #8e8e8e;
+            margin-bottom: 30px;
+        }
+        
+        .time-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .time-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        .time-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .time-btn.active {
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+        }
+        
+        .leaderboard {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .rank-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rank-item:hover {
+            transform: translateX(5px);
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .rank-item.top-3 {
+            background: linear-gradient(90deg, rgba(243, 156, 18, 0.2), transparent);
+        }
+        
+        .rank-number {
+            font-size: 2rem;
+            font-weight: bold;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        .rank-1 { color: #f39c12; }
+        .rank-2 { color: #bdc3c7; }
+        .rank-3 { color: #e67e22; }
+        .rank-other { color: #7f8c8d; }
+        
+        .rank-medal {
+            font-size: 1.5rem;
+            margin-right: 5px;
+        }
+        
+        .rank-info {
+            flex: 1;
+        }
+        
+        .rank-company {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .rank-details {
+            color: #8e8e8e;
+            font-size: 0.9rem;
+        }
+        
+        .rank-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(243, 156, 18, 0.3), transparent);
+            transition: width 0.8s;
+        }
+        
+        .rank-count {
+            font-size: 2.5rem;
+            font-weight: bold;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .rank-trend {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .trend-up { color: #2ecc71; }
+        .trend-down { color: #e74c3c; }
+        .trend-same { color: #f39c12; }
+        
+        .monthly-chart {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        .chart-title {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #f39c12;
+        }
+        
+        .heatmap {
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            gap: 3px;
+            margin: 20px 0;
+        }
+        
+        .heatmap-cell {
+            aspect-ratio: 1;
+            border-radius: 3px;
+            position: relative;
+        }
+        
+        .heatmap-cell:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            z-index: 10;
+        }
+        
+        .heatmap-label {
+            font-size: 0.7rem;
+            color: #8e8e8e;
+            text-align: center;
+        }
+        
+        .insights {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .insights h3 {
+            margin-bottom: 15px;
+            color: #f39c12;
+        }
+        
+        .insight-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            border-left: 3px solid #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 AI 风云榜</h1>
+        <p class="subtitle">各公司模型发布排名 · 谁是卷王？</p>
+        
+        <div class="time-selector">
+            <button class="time-btn active" onclick="setTime('all')">全部时间</button>
+            <button class="time-btn" onclick="setTime('2026')">2026年</button>
+            <button class="time-btn" onclick="setTime('2025')">2025年</button>
+            <button class="time-btn" onclick="setTime('2024')">2024年</button>
+            <button class="time-btn" onclick="setTime('2023')">2023年</button>
+        </div>
+        
+        <div class="leaderboard" id="leaderboard"></div>
+        
+        <div class="monthly-chart">
+            <div class="chart-title">📅 月度发布热力图</div>
+            <div class="heatmap" id="heatmap"></div>
+        </div>
+        
+        <div class="insights">
+            <h3>🏆 排名洞察</h3>
+            <div id="insightsContent"></div>
+        </div>
+    </div>
+
+    <script>
+        let data = [];
+        let currentTime = 'all';
+
+        // 公司颜色
+        const companyColors = {
+            "OpenAI": "#2ecc71",
+            "Alibaba": "#e67e22",
+            "Google": "#3498db",
+            "Anthropic": "#9b59b6",
+            "Meta": "#1abc9c",
+            "DeepSeek": "#f39c12",
+            "xAI": "#e74c3c",
+            "Mistral": "#34495e",
+            "NVIDIA": "#27ae60",
+            "Baidu": "#2980b9",
+            "ByteDance": "#8e44ad",
+            "Tencent": "#16a085",
+            "iFlytek": "#d35400",
+            "Zhipu AI": "#c0392b",
+            "MiniMax": "#7f8c8d",
+            "Xiaomi": "#e74c3c"
+        };
+
+        // 加载数据
+        async function loadData() {
+            try {
+                const response = await fetch('../data/llm_timeline.json');
+                data = await response.json();
+                updateLeaderboard();
+                updateHeatmap();
+                updateInsights();
+            } catch (error) {
+                console.error('加载数据失败:', error);
+            }
+        }
+
+        // 更新排行榜
+        function updateLeaderboard() {
+            const leaderboard = document.getElementById('leaderboard');
+            
+            // 过滤数据
+            let filteredData = data;
+            if (currentTime !== 'all') {
+                filteredData = data.filter(d => d.date && d.date.startsWith(currentTime));
+            }
+            
+            // 统计各公司模型数量
+            const companies = {};
+            filteredData.forEach(item => {
+                if (item.org) {
+                    companies[item.org] = (companies[item.org] || 0) + 1;
+                }
+            });
+            
+            // 排序
+            const sorted = Object.entries(companies)
+                .map(([name, count]) => ({ name, count }))
+                .sort((a, b) => b.count - a.count);
+            
+            const maxCount = sorted[0]?.count || 1;
+            
+            leaderboard.innerHTML = sorted.map((company, index) => {
+                const rank = index + 1;
+                const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : '';
+                const rankClass = rank <= 3 ? `rank-${rank}` : 'rank-other';
+                const barWidth = (company.count / maxCount) * 100;
+                
+                return `
+                    <div class="rank-item ${rank <= 3 ? 'top-3' : ''}">
+                        <div class="rank-bar" style="width: ${barWidth}%"></div>
+                        <div class="rank-number ${rankClass}">
+                            ${medal ? `<span class="rank-medal">${medal}</span>` : ''}
+                            ${rank}
+                        </div>
+                        <div class="rank-info">
+                            <div class="rank-company" style="color: ${companyColors[company.name] || '#fff'}">
+                                ${company.name}
+                            </div>
+                            <div class="rank-details">
+                                占比 ${((company.count / filteredData.length) * 100).toFixed(1)}%
+                            </div>
+                        </div>
+                        <div class="rank-count" style="color: ${companyColors[company.name] || '#f39c12'}">
+                            ${company.count}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 更新热力图
+        function updateHeatmap() {
+            const heatmap = document.getElementById('heatmap');
+            
+            // 按月统计
+            const monthly = {};
+            data.forEach(item => {
+                if (item.date) {
+                    const month = item.date.substring(0, 7);
+                    monthly[month] = (monthly[month] || 0) + 1;
+                }
+            });
+            
+            // 生成热力图
+            const months = Object.keys(monthly).sort();
+            const maxMonthly = Math.max(...Object.values(monthly));
+            
+            heatmap.innerHTML = months.map(month => {
+                const count = monthly[month];
+                const intensity = count / maxMonthly;
+                const color = `rgba(243, 156, 18, ${0.2 + intensity * 0.8})`;
+                
+                return `
+                    <div class="heatmap-cell" 
+                         style="background: ${color}"
+                         data-tooltip="${month}: ${count} 个模型">
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 更新洞察
+        function updateInsights() {
+            const insightsContent = document.getElementById('insightsContent');
+            
+            // 过滤数据
+            let filteredData = data;
+            if (currentTime !== 'all') {
+                filteredData = data.filter(d => d.date && d.date.startsWith(currentTime));
+            }
+            
+            // 统计
+            const companies = {};
+            filteredData.forEach(item => {
+                if (item.org) {
+                    companies[item.org] = (companies[item.org] || 0) + 1;
+                }
+            });
+            
+            const sorted = Object.entries(companies)
+                .map(([name, count]) => ({ name, count }))
+                .sort((a, b) => b.count - a.count);
+            
+            const topCompany = sorted[0];
+            const totalModels = filteredData.length;
+            const avgPerCompany = (totalModels / sorted.length).toFixed(1);
+            
+            insightsContent.innerHTML = `
+                <div class="insight-item">
+                    <strong>🏆 卷王之王：</strong>${topCompany.name} 以 ${topCompany.count} 个模型霸榜
+                </div>
+                <div class="insight-item">
+                    <strong>📊 总模型数：</strong>${currentTime === 'all' ? '全部' : currentTime}年共发布 ${totalModels} 个模型
+                </div>
+                <div class="insight-item">
+                    <strong>📈 平均水平：</strong>每家公司平均发布 ${avgPerCompany} 个模型
+                </div>
+                <div class="insight-item">
+                    <strong>🎯 竞争格局：</strong>前3名占据 ${((sorted.slice(0, 3).reduce((a, b) => a + b.count, 0) / totalModels) * 100).toFixed(1)}% 的发布量
+                </div>
+            `;
+        }
+
+        // 设置时间
+        function setTime(time) {
+            currentTime = time;
+            
+            // 更新按钮状态
+            document.querySelectorAll('.time-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            updateLeaderboard();
+            updateInsights();
+        }
+
+        // 初始化
+        loadData();
+    </script>
+</body>
+</html>

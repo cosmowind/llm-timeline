@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 LLM Timeline 可视化合集</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: white;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #f39c12, #e74c3c, #9b59b6, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #8e8e8e;
+            margin-bottom: 50px;
+            font-size: 1.2rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .card-desc {
+            color: #8e8e8e;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .card-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 15px;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+        }
+        
+        .stat {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f39c12;
+        }
+        
+        .stat-label {
+            color: #8e8e8e;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            color: #8e8e8e;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 LLM Timeline</h1>
+        <p class="subtitle">大模型演进史 · 可视化合集 · 2018-2026</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">675</div>
+                <div class="stat-label">总模型数</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">参与公司</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">8</div>
+                <div class="stat-label">覆盖年份</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">5</div>
+                <div class="stat-label">可视化</div>
+            </div>
+        </div>
+        
+        <div class="grid">
+            <a href="throne.html" class="card">
+                <div class="card-icon">🏆</div>
+                <div class="card-title">王座争夺战</div>
+                <div class="card-desc">
+                    时间轴动画展示最强模型更替，看谁是当时的"王"
+                </div>
+                <div class="card-tag">动画 · 叙事</div>
+            </a>
+            
+            <a href="arms-race.html" class="card">
+                <div class="card-icon">⚔️</div>
+                <div class="card-title">军备竞赛</div>
+                <div class="card-desc">
+                    各公司发布节奏对比，气泡图展示竞争态势
+                </div>
+                <div class="card-tag">对比 · 分析</div>
+            </a>
+            
+            <a href="leaderboard.html" class="card">
+                <div class="card-icon">📊</div>
+                <div class="card-title">风云榜</div>
+                <div class="card-desc">
+                    按时间段统计排名，看谁是"卷王"
+                </div>
+                <div class="card-tag">排名 · 统计</div>
+            </a>
+            
+            <a href="galaxy.html" class="card">
+                <div class="card-icon">🌌</div>
+                <div class="card-title">AI 星系</div>
+                <div class="card-desc">
+                    公司为中心的星系图，展示生态复杂度
+                </div>
+                <div class="card-tag">艺术 · 交互</div>
+            </a>
+            
+            <a href="river.html" class="card">
+                <div class="card-icon">🌊</div>
+                <div class="card-title">河流图</div>
+                <div class="card-desc">
+                    时间流淌中的模型洪流，看各公司的发展轨迹
+                </div>
+                <div class="card-tag">趋势 · 流动</div>
+            </a>
+            
+            <a href="index.html" class="card">
+                <div class="card-icon">📋</div>
+                <div class="card-title">时间线</div>
+                <div class="card-desc">
+                    完整的模型时间线，支持筛选和搜索
+                </div>
+                <div class="card-tag">完整 · 详细</div>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>数据来源：awesome-ai-models, frontier, 联网搜索</p>
+            <p>最后更新：2026-05-29</p>
+        </div>
+    </div>
+</body>
+</html>

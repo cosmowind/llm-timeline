@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚔️ AI 军备竞赛 - 各公司发布节奏对比</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: white;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #2ecc71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #8e8e8e;
+            margin-bottom: 30px;
+        }
+        
+        .chart-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .btn.active {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #8e8e8e;
+            font-size: 0.9rem;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+        
+        .legend-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .legend-item.inactive {
+            opacity: 0.3;
+        }
+        
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .insights {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .insights h3 {
+            margin-bottom: 15px;
+            color: #f39c12;
+        }
+        
+        .insight-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            border-left: 3px solid #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚔️ AI 军备竞赛</h1>
+        <p class="subtitle">各公司模型发布节奏对比 · 2023-2026</p>
+        
+        <div class="controls">
+            <button class="btn active" onclick="setView('yearly')">按年份</button>
+            <button class="btn" onclick="setView('quarterly')">按季度</button>
+            <button class="btn" onclick="setView('monthly')">按月份</button>
+        </div>
+        
+        <div class="stats-grid" id="statsGrid"></div>
+        
+        <div class="legend" id="legend"></div>
+        
+        <div class="chart-container">
+            <canvas id="bubbleChart" height="400"></canvas>
+        </div>
+        
+        <div class="insights">
+            <h3>📊 数据洞察</h3>
+            <div id="insightsContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // 加载数据
+        let data = [];
+        let chart = null;
+        let currentView = 'yearly';
+        
+        // 公司颜色
+        const companyColors = {
+            "OpenAI": "#2ecc71",
+            "Alibaba": "#e67e22",
+            "Google": "#3498db",
+            "Anthropic": "#9b59b6",
+            "Meta": "#1abc9c",
+            "DeepSeek": "#f39c12",
+            "xAI": "#e74c3c",
+            "Mistral": "#34495e",
+            "NVIDIA": "#27ae60",
+            "Baidu": "#2980b9",
+            "ByteDance": "#8e44ad",
+            "Tencent": "#16a085",
+            "iFlytek": "#d35400",
+            "Zhipu AI": "#c0392b",
+            "MiniMax": "#7f8c8d",
+            "Xiaomi": "#e74c3c"
+        };
+
+        // 加载数据
+        async function loadData() {
+            try {
+                const response = await fetch('../data/llm_timeline.json');
+                data = await response.json();
+                initChart();
+                updateStats();
+                updateInsights();
+            } catch (error) {
+                console.error('加载数据失败:', error);
+            }
+        }
+
+        // 初始化图表
+        function initChart() {
+            const ctx = document.getElementById('bubbleChart').getContext('2d');
+            
+            const processedData = processData();
+            
+            chart = new Chart(ctx, {
+                type: 'bubble',
+                data: {
+                    datasets: processedData
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: '时间',
+                                color: '#8e8e8e'
+                            },
+                            ticks: {
+                                color: '#8e8e8e'
+                            },
+                            grid: {
+                                color: 'rgba(255,255,255,0.1)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: '公司',
+                                color: '#8e8e8e'
+                            },
+                            ticks: {
+                                color: '#8e8e8e'
+                            },
+                            grid: {
+                                color: 'rgba(255,255,255,0.1)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const item = context.raw;
+                                    return `${item.name} (${item.date})`;
+                                }
+                            }
+                        },
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+            
+            initLegend();
+        }
+
+        // 处理数据
+        function processData() {
+            const companies = [...new Set(data.map(d => d.org).filter(Boolean))];
+            const datasets = [];
+            
+            companies.forEach((company, companyIndex) => {
+                const companyData = data.filter(d => d.org === company);
+                
+                companyData.forEach(item => {
+                    const date = new Date(item.date);
+                    if (isNaN(date.getTime())) return;
+                    
+                    datasets.push({
+                        label: company,
+                        data: [{
+                            x: date.getTime(),
+                            y: companyIndex,
+                            r: 8,
+                            name: item.name,
+                            date: item.date,
+                            org: company
+                        }],
+                        backgroundColor: (companyColors[company] || '#95a5a6') + '80',
+                        borderColor: companyColors[company] || '#95a5a6',
+                        borderWidth: 2
+                    });
+                });
+            });
+            
+            return datasets;
+        }
+
+        // 更新统计
+        function updateStats() {
+            const statsGrid = document.getElementById('statsGrid');
+            
+            const companies = [...new Set(data.map(d => d.org).filter(Boolean))];
+            const topCompanies = companies
+                .map(c => ({
+                    name: c,
+                    count: data.filter(d => d.org === c).length
+                }))
+                .sort((a, b) => b.count - a.count)
+                .slice(0, 6);
+            
+            statsGrid.innerHTML = topCompanies.map(company => `
+                <div class="stat-card">
+                    <div class="stat-value" style="color: ${companyColors[company.name] || '#f39c12'}">${company.count}</div>
+                    <div class="stat-label">${company.name}</div>
+                </div>
+            `).join('');
+        }
+
+        // 初始化图例
+        function initLegend() {
+            const legend = document.getElementById('legend');
+            const companies = [...new Set(data.map(d => d.org).filter(Boolean))];
+            
+            legend.innerHTML = companies.map(company => `
+                <div class="legend-item" onclick="toggleCompany('${company}')">
+                    <div class="legend-dot" style="background: ${companyColors[company] || '#95a5a6'}"></div>
+                    <span>${company}</span>
+                </div>
+            `).join('');
+        }
+
+        // 切换公司显示
+        function toggleCompany(company) {
+            // 这里可以添加过滤逻辑
+        }
+
+        // 设置视图
+        function setView(view) {
+            currentView = view;
+            
+            // 更新按钮状态
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 这里可以根据视图更新图表
+        }
+
+        // 更新洞察
+        function updateInsights() {
+            const insightsContent = document.getElementById('insightsContent');
+            
+            const companies = [...new Set(data.map(d => d.org).filter(Boolean))];
+            const topCompany = companies
+                .map(c => ({
+                    name: c,
+                    count: data.filter(d => d.org === c).length
+                }))
+                .sort((a, b) => b.count - a.count)[0];
+            
+            const latestModel = data
+                .filter(d => d.date)
+                .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+            
+            insightsContent.innerHTML = `
+                <div class="insight-item">
+                    <strong>🏆 发布之王：</strong>${topCompany.name} 以 ${topCompany.count} 个模型遥遥领先
+                </div>
+                <div class="insight-item">
+                    <strong>🆕 最新模型：</strong>${latestModel.name} (${latestModel.date}) - ${latestModel.org}
+                </div>
+                <div class="insight-item">
+                    <strong>📈 趋势：</strong>2025-2026年模型发布频率显著加快，竞争白热化
+                </div>
+                <div class="insight-item">
+                    <strong>🌍 格局：</strong>中美两国占据主导地位，欧洲以 Mistral 为代表
+                </div>
+            `;
+        }
+
+        // 初始化
+        loadData();
+    </script>
+</body>
+</html>

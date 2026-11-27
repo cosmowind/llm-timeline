@@ -1,0 +1,182 @@
+[
+  {
+    "date": "2024-05-14",
+    "model": "GPT-4o",
+    "org": "OpenAI",
+    "score": 90.2
+  },
+  {
+    "date": "2024-03-04",
+    "model": "Claude 3 Opus",
+    "org": "Anthropic",
+    "score": 84.9
+  },
+  {
+    "date": "2024-06-20",
+    "model": "Claude 3.5 Sonnet",
+    "org": "Anthropic",
+    "score": 92.0
+  },
+  {
+    "date": "2024-02-15",
+    "model": "Gemini 1.5 Pro",
+    "org": "Google",
+    "score": 84.1
+  },
+  {
+    "date": "2024-07-23",
+    "model": "Llama 3.1 405B",
+    "org": "Meta",
+    "score": 89.0
+  },
+  {
+    "date": "2024-09-05",
+    "model": "DeepSeek V2.5",
+    "org": "DeepSeek",
+    "score": 81.0
+  },
+  {
+    "date": "2024-08-13",
+    "model": "Grok 2",
+    "org": "xAI",
+    "score": 82.0
+  },
+  {
+    "date": "2024-09-19",
+    "model": "Qwen 2.5",
+    "org": "阿里",
+    "score": 80.0
+  },
+  {
+    "date": "2024-01-16",
+    "model": "GLM-4",
+    "org": "智谱AI",
+    "score": 78.0
+  },
+  {
+    "date": "2025-07-01",
+    "model": "GPT-5",
+    "org": "OpenAI",
+    "score": 93.5
+  },
+  {
+    "date": "2025-07-22",
+    "model": "Claude 4 Opus",
+    "org": "Anthropic",
+    "score": 94.2
+  },
+  {
+    "date": "2025-03-25",
+    "model": "Gemini 2.5 Pro",
+    "org": "Google",
+    "score": 91.0
+  },
+  {
+    "date": "2025-05-28",
+    "model": "DeepSeek V3.1",
+    "org": "DeepSeek",
+    "score": 88.5
+  },
+  {
+    "date": "2025-02-18",
+    "model": "Grok 3",
+    "org": "xAI",
+    "score": 86.0
+  },
+  {
+    "date": "2025-04-05",
+    "model": "Llama 4 Scout",
+    "org": "Meta",
+    "score": 87.0
+  },
+  {
+    "date": "2025-04-29",
+    "model": "Qwen 3",
+    "org": "阿里",
+    "score": 85.0
+  },
+  {
+    "date": "2025-10-01",
+    "model": "GLM-5",
+    "org": "智谱AI",
+    "score": 86.0
+  },
+  {
+    "date": "2026-04-23",
+    "model": "GPT-5.5",
+    "org": "OpenAI",
+    "score": 92.1
+  },
+  {
+    "date": "2026-04-16",
+    "model": "Claude Opus 4.7",
+    "org": "Anthropic",
+    "score": 95.0
+  },
+  {
+    "date": "2026-05-29",
+    "model": "Claude Opus 4.8",
+    "org": "Anthropic",
+    "score": 95.5
+  },
+  {
+    "date": "2026-04-01",
+    "model": "Gemini 3.1 Pro",
+    "org": "Google",
+    "score": 90.0
+  },
+  {
+    "date": "2026-03-24",
+    "model": "DeepSeek V4 Pro",
+    "org": "DeepSeek",
+    "score": 85.6
+  },
+  {
+    "date": "2026-04-14",
+    "model": "GPT-6 (未确认)",
+    "org": "OpenAI",
+    "score": 94.0
+  },
+  {
+    "date": "2026-04-16",
+    "model": "Qwen 3.6 Max",
+    "org": "阿里",
+    "score": 87.0
+  },
+  {
+    "date": "2026-04-01",
+    "model": "GLM-5.1",
+    "org": "智谱AI",
+    "score": 86.0
+  },
+  {
+    "date": "2026-04-10",
+    "model": "Kimi K2.6",
+    "org": "月之暗面",
+    "score": 88.0
+  },
+  {
+    "date": "2026-05-01",
+    "model": "豆包 Seed 2.0 Pro",
+    "org": "字节跳动",
+    "score": 85.0
+  },
+  {
+    "date": "2026-05-01",
+    "model": "混元 3 Preview",
+    "org": "腾讯",
+    "score": 84.0
+  },
+  {
+    "date": "2026-05-01",
+    "model": "文心 ERNIE 5.1",
+    "org": "百度",
+    "score": 83.0
+  },
+  {
+    "date": "2026-05-01",
+    "model": "星火 V4",
+    "org": "讯飞",
+    "score": 82.0
+  }
+]

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 AI 王座争夺战 - 大模型争霸史</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #f39c12, #e74c3c, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(243, 156, 18, 0.5);
+        }
+        
+        .subtitle {
+            color: #8e8e8e;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        /* 王座区域 */
+        .throne-area {
+            position: relative;
+            height: 400px;
+            margin: 40px 0;
+        }
+        
+        .throne {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 350px;
+            background: linear-gradient(180deg, #f39c12, #e67e22);
+            border-radius: 20px 20px 50% 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 50px rgba(243, 156, 18, 0.5), 0 0 100px rgba(243, 156, 18, 0.3);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        
+        .throne::before {
+            content: '👑';
+            font-size: 4rem;
+            position: absolute;
+            top: -50px;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .model-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-top: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .company-name {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .model-date {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 15px;
+            background: rgba(0,0,0,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        .model-desc {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 10px;
+            max-width: 250px;
+        }
+        
+        /* 时间轴 */
+        .timeline {
+            position: relative;
+            margin: 60px 0 30px;
+            height: 120px;
+        }
+        
+        .timeline-track {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            right: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c, #f39c12, #2ecc71);
+            transform: translateY(-50%);
+            border-radius: 2px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 3px solid #f39c12;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 5;
+        }
+        
+        .timeline-dot:hover {
+            transform: translate(-50%, -50%) scale(1.5);
+            box-shadow: 0 0 20px rgba(243, 156, 18, 0.8);
+        }
+        
+        .timeline-dot.active {
+            background: #f39c12;
+            box-shadow: 0 0 20px rgba(243, 156, 18, 0.8);
+            width: 20px;
+            height: 20px;
+        }
+        
+        .timeline-label {
+            position: absolute;
+            bottom: -30px;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: #8e8e8e;
+            white-space: nowrap;
+        }
+        
+        .timeline-model {
+            position: absolute;
+            top: -25px;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            color: #f39c12;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .timeline-dot:hover .timeline-model {
+            opacity: 1;
+        }
+        
+        /* 控制栏 */
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+        }
+        
+        /* 统计栏 */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f39c12;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #8e8e8e;
+            margin-top: 5px;
+        }
+        
+        /* 公司图例 */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        /* 进度条 */
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #f39c12, #e74c3c);
+            border-radius: 3px;
+            transition: width 0.5s;
+        }
+        
+        /* 提示 */
+        .hint {
+            color: #8e8e8e;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 AI 王座争夺战</h1>
+        <p class="subtitle">大模型争霸史 · 2023-2026</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="totalModels">675</div>
+                <div class="stat-label">总模型数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="totalCompanies">50+</div>
+                <div class="stat-label">参与公司</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="totalYears">4</div>
+                <div class="stat-label">争霸年数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="currentYear">2023</div>
+                <div class="stat-label">当前年份</div>
+            </div>
+        </div>
+        
+        <div class="throne-area">
+            <div class="throne" id="throne">
+                <div class="model-name" id="modelName">GPT-4</div>
+                <div class="company-name" id="companyName">OpenAI</div>
+                <div class="model-date" id="modelDate">2023-03-14</div>
+                <div class="model-desc" id="modelDesc">开启大模型时代的里程碑</div>
+            </div>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress" id="progress" style="width: 0%"></div>
+        </div>
+        
+        <div class="timeline" id="timeline">
+            <div class="timeline-track"></div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn" id="prevBtn" onclick="prevModel()">◀ 上一个</button>
+            <button class="btn btn-primary" id="playBtn" onclick="togglePlay()">▶ 自动播放</button>
+            <button class="btn" id="nextBtn" onclick="nextModel()">下一个 ▶</button>
+        </div>
+        
+        <div class="legend" id="legend"></div>
+        
+        <p class="hint">💡 点击时间轴上的圆点可跳转到对应模型</p>
+    </div>
+
+    <script>
+        // 王座模型数据（按时间排序的旗舰模型）
+        const throneModels = [
+            { date: "2023-03-14", name: "GPT-4", org: "OpenAI", color: "#2ecc71", desc: "开启大模型时代的里程碑" },
+            { date: "2023-11-06", name: "GPT-4V", org: "OpenAI", color: "#2ecc71", desc: "首个原生多模态大模型" },
+            { date: "2024-03-17", name: "Grok-1", org: "xAI", color: "#e74c3c", desc: "马斯克入场，开源314B参数" },
+            { date: "2024-05-13", name: "GPT-4o", org: "OpenAI", color: "#2ecc71", desc: "全能模型，速度提升2x" },
+            { date: "2024-07-23", name: "Llama 3.1", org: "Meta", color: "#3498db", desc: "开源之王，405B参数" },
+            { date: "2025-02-18", name: "Grok 3", org: "xAI", color: "#e74c3c", desc: "推理能力突破" },
+            { date: "2025-02-24", name: "Claude 3.7", org: "Anthropic", color: "#9b59b6", desc: "首个混合推理模型" },
+            { date: "2025-05-28", name: "DeepSeek V3.1", org: "DeepSeek", color: "#f39c12", desc: "中国力量崛起" },
+            { date: "2025-07-22", name: "Claude 4 Opus", org: "Anthropic", color: "#9b59b6", desc: "代码能力登顶" },
+            { date: "2025-07-23", name: "Llama 4", org: "Meta", color: "#3498db", desc: "首个MoE架构，1000万Token" },
+            { date: "2025-08-21", name: "Claude 4.5", org: "Anthropic", color: "#9b59b6", desc: "性价比革命" },
+            { date: "2025-11-20", name: "DeepSeek V3.2", org: "DeepSeek", color: "#f39c12", desc: "开源新巅峰" },
+            { date: "2026-02-01", name: "GPT-5.1", org: "OpenAI", color: "#2ecc71", desc: "OpenAI 反击" },
+            { date: "2026-03-24", name: "DeepSeek V4", org: "DeepSeek", color: "#f39c12", desc: "百万Token上下文" },
+            { date: "2026-04-14", name: "GPT-6", org: "OpenAI", color: "#2ecc71", desc: "代号土豆，200万Token" },
+            { date: "2026-04-23", name: "GPT-5.5", org: "OpenAI", color: "#2ecc71", desc: "当前最强综合模型" },
+            { date: "2026-05-29", name: "Claude Opus 4.8", org: "Anthropic", color: "#9b59b6", desc: "今日最新发布！" }
+        ];
+
+        let currentIndex = 0;
+        let isPlaying = false;
+        let playInterval = null;
+
+        // 公司颜色映射
+        const companyColors = {
+            "OpenAI": "#2ecc71",
+            "Anthropic": "#9b59b6",
+            "Meta": "#3498db",
+            "DeepSeek": "#f39c12",
+            "xAI": "#e74c3c",
+            "Google": "#1abc9c",
+            "Alibaba": "#e67e22"
+        };
+
+        // 初始化时间轴
+        function initTimeline() {
+            const timeline = document.getElementById('timeline');
+            
+            throneModels.forEach((model, index) => {
+                const position = (index / (throneModels.length - 1)) * 100;
+                
+                const dot = document.createElement('div');
+                dot.className = 'timeline-dot';
+                dot.style.left = `${position}%`;
+                dot.onclick = () => goToModel(index);
+                
+                const label = document.createElement('div');
+                label.className = 'timeline-label';
+                label.textContent = model.date.substring(0, 7);
+                dot.appendChild(label);
+                
+                const modelLabel = document.createElement('div');
+                modelLabel.className = 'timeline-model';
+                modelLabel.textContent = model.name;
+                dot.appendChild(modelLabel);
+                
+                timeline.appendChild(dot);
+            });
+            
+            updateDisplay();
+            initLegend();
+        }
+
+        // 初始化图例
+        function initLegend() {
+            const legend = document.getElementById('legend');
+            
+            Object.entries(companyColors).forEach(([company, color]) => {
+                const item = document.createElement('div');
+                item.className = 'legend-item';
+                
+                const dot = document.createElement('div');
+                dot.className = 'legend-dot';
+                dot.style.background = color;
+                
+                const text = document.createElement('span');
+                text.textContent = company;
+                
+                item.appendChild(dot);
+                item.appendChild(text);
+                legend.appendChild(item);
+            });
+        }
+
+        // 更新显示
+        function updateDisplay() {
+            const model = throneModels[currentIndex];
+            
+            // 更新王座
+            document.getElementById('modelName').textContent = model.name;
+            document.getElementById('companyName').textContent = model.org;
+            document.getElementById('modelDate').textContent = model.date;
+            document.getElementById('modelDesc').textContent = model.desc;
+            
+            // 更新王座颜色
+            const throne = document.getElementById('throne');
+            const color = companyColors[model.org] || '#f39c12';
+            throne.style.background = `linear-gradient(180deg, ${color}, ${adjustColor(color, -30)})`;
+            throne.style.boxShadow = `0 0 50px ${color}80, 0 0 100px ${color}40`;
+            
+            // 更新年份
+            document.getElementById('currentYear').textContent = model.date.substring(0, 4);
+            
+            // 更新进度条
+            const progress = (currentIndex / (throneModels.length - 1)) * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+            
+            // 更新时间轴高亮
+            const dots = document.querySelectorAll('.timeline-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            // 更新按钮状态
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+            document.getElementById('nextBtn').disabled = currentIndex === throneModels.length - 1;
+        }
+
+        // 颜色调整工具
+        function adjustColor(hex, amount) {
+            let r = parseInt(hex.slice(1, 3), 16);
+            let g = parseInt(hex.slice(3, 5), 16);
+            let b = parseInt(hex.slice(5, 7), 16);
+            
+            r = Math.max(0, Math.min(255, r + amount));
+            g = Math.max(0, Math.min(255, g + amount));
+            b = Math.max(0, Math.min(255, b + amount));
+            
+            return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+        }
+
+        // 导航函数
+        function goToModel(index) {
+            currentIndex = index;
+            updateDisplay();
+        }
+
+        function prevModel() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateDisplay();
+            }
+        }
+
+        function nextModel() {
+            if (currentIndex < throneModels.length - 1) {
+                currentIndex++;
+                updateDisplay();
+            }
+        }
+
+        // 自动播放
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            const btn = document.getElementById('playBtn');
+            
+            if (isPlaying) {
+                btn.textContent = '⏸ 暂停';
+                playInterval = setInterval(() => {
+                    if (currentIndex < throneModels.length - 1) {
+                        nextModel();
+                    } else {
+                        togglePlay();
+                    }
+                }, 2000);
+            } else {
+                btn.textContent = '▶ 自动播放';
+                clearInterval(playInterval);
+            }
+        }
+
+        // 键盘控制
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevModel();
+            if (e.key === 'ArrowRight') nextModel();
+            if (e.key === ' ') togglePlay();
+        });
+
+        // 初始化
+        initTimeline();
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+[
+  {
+    "org": "阿里",
+    "versions": 94,
+    "series": 79
+  },
+  {
+    "org": "OpenAI",
+    "versions": 67,
+    "series": 44
+  },
+  {
+    "org": "Google",
+    "versions": 55,
+    "series": 38
+  },
+  {
+    "org": "Anthropic",
+    "versions": 31,
+    "series": 19
+  },
+  {
+    "org": "Mistral",
+    "versions": 31,
+    "series": 28
+  },
+  {
+    "org": "DeepSeek",
+    "versions": 27,
+    "series": 23
+  },
+  {
+    "org": "智谱AI",
+    "versions": 24,
+    "series": 18
+  },
+  {
+    "org": "Meta",
+    "versions": 22,
+    "series": 22
+  },
+  {
+    "org": "NVIDIA",
+    "versions": 16,
+    "series": 11
+  },
+  {
+    "org": "字节跳动",
+    "versions": 14,
+    "series": 14
+  },
+  {
+    "org": "Amazon",
+    "versions": 14,
+    "series": 7
+  },
+  {
+    "org": "xAI",
+    "versions": 13,
+    "series": 11
+  },
+  {
+    "org": "MiniMax",
+    "versions": 12,
+    "series": 12
+  },
+  {
+    "org": "百度",
+    "versions": 11,
+    "series": 11
+  },
+  {
+    "org": "Allen Institute for AI",
+    "versions": 10,
+    "series": 10
+  },
+  {
+    "org": "Stability AI",
+    "versions": 9,
+    "series": 9
+  },
+  {
+    "org": "小米",
+    "versions": 8,
+    "series": 6
+  },
+  {
+    "org": "月之暗面",
+    "versions": 8,
+    "series": 8
+  },
+  {
+    "org": "LG AI Research",
+    "versions": 8,
+    "series": 4
+  },
+  {
+    "org": "Liquid AI",
+    "versions": 8,
+    "series": 8
+  },
+  {
+    "org": "讯飞",
+    "versions": 7,
+    "series": 7
+  },
+  {
+    "org": "Upstage",
+    "versions": 7,
+    "series": 4
+  },
+  {
+    "org": "Nous Research",
+    "versions": 7,
+    "series": 5
+  },
+  {
+    "org": "IBM",
+    "versions": 7,
+    "series": 7
+  },
+  {
+    "org": "AI21 Labs",
+    "versions": 7,
+    "series": 7
+  },
+  {
+    "org": "StepFun",
+    "versions": 7,
+    "series": 7
+  },
+  {
+    "org": "InclusionAI",
+    "versions": 7,
+    "series": 7
+  },
+  {
+    "org": "Microsoft",
+    "versions": 6,
+    "series": 6
+  },
+  {
+    "org": "Perplexity",
+    "versions": 5,
+    "series": 5
+  },
+  {
+    "org": "Kuaishou",
+    "versions": 4,
+    "series": 4
+  },
+  {
+    "org": "MBZUAI Institute of Foundation Models",
+    "versions": 4,
+    "series": 2
+  },
+  {
+    "org": "Pika",
+    "versions": 4,
+    "series": 4
+  },
+  {
+    "org": "Black Forest Labs",
+    "versions": 4,
+    "series": 4
+  },
+  {
+    "org": "零一万物",
+    "versions": 4,
+    "series": 4
+  },
+  {
+    "org": "Cohere",
+    "versions": 4,
+    "series": 4
+  },
+  {
+    "org": "Sarvam",
+    "versions": 3,
+    "series": 3
+  },
+  {
+    "org": "ElevenLabs",
+    "versions": 3,
+    "series": 3
+  },
+  {
+    "org": "腾讯",
+    "versions": 2,
+    "series": 2
+  },
+  {
+    "org": "ServiceNow",
+    "versions": 2,
+    "series": 2
+  },
+  {
+    "org": "Runway",
+    "versions": 2,
+    "series": 2
+  },
+  {
+    "org": "Trillion Labs",
+    "versions": 2,
+    "series": 2
+  },
+  {
+    "org": "Hugging Face",
+    "versions": 2,
+    "series": 2
+  },
+  {
+    "org": "Databricks",
+    "versions": 2,
+    "series": 2
+  },
+  {
+    "org": "Swiss AI Initiative",
+    "versions": 2,
+    "series": 2
+  },
+  {
+    "org": "KwaiKAT",
+    "versions": 2,
+    "series": 2
+  },
+  {
+    "org": "Korea Telecom",
+    "versions": 2,
+    "series": 2
+  },
+  {
+    "org": "Reka AI",
+    "versions": 2,
+    "series": 2
+  },
+  {
+    "org": "Arcee AI",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Motif Technologies",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Deep Cogito",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Naver",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "TII",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "MosaicML",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Together",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Suno",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "LMSYS",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Nomic AI",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Stanford",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Snowflake",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "TII UAE",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Prime Intellect",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "China Mobile",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "LongCat",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Inception",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "Nanbeige",
+    "versions": 1,
+    "series": 1
+  },
+  {
+    "org": "OpenChat",
+    "versions": 1,
+    "series": 1
+  }
+]

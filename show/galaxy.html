@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 AI 星系 - 公司生态图</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        canvas {
+            display: block;
+        }
+        
+        .controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        
+        .info-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 250px;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+        
+        .info-panel.visible {
+            display: block;
+        }
+        
+        .info-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #f39c12;
+        }
+        
+        .info-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #8e8e8e;
+        }
+        
+        .model-list {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+        
+        .model-item {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+        
+        .legend {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            max-width: 80%;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        
+        .legend-item:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        
+        .title {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            background: linear-gradient(90deg, #f39c12, #e74c3c, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #8e8e8e;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>🌌 AI 星系</h1>
+        <p class="subtitle">每个公司是一个星系，模型是围绕的星球</p>
+    </div>
+    
+    <div class="controls">
+        <button class="btn active" onclick="setMode('orbit')">环绕模式</button>
+        <button class="btn" onclick="setMode('timeline')">时间线模式</button>
+        <button class="btn" onclick="setMode('force')">力导向模式</button>
+    </div>
+    
+    <div class="info-panel" id="infoPanel">
+        <div class="info-title" id="infoTitle"></div>
+        <div class="info-stats" id="infoStats"></div>
+        <div class="model-list" id="modelList"></div>
+    </div>
+    
+    <div class="legend" id="legend"></div>
+    
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let data = [];
+        let galaxies = [];
+        let selectedGalaxy = null;
+        let mode = 'orbit';
+        let animationFrame = null;
+        
+        // 公司颜色
+        const companyColors = {
+            "OpenAI": "#2ecc71",
+            "Alibaba": "#e67e22",
+            "Google": "#3498db",
+            "Anthropic": "#9b59b6",
+            "Meta": "#1abc9c",
+            "DeepSeek": "#f39c12",
+            "xAI": "#e74c3c",
+            "Mistral": "#34495e",
+            "NVIDIA": "#27ae60",
+            "Baidu": "#2980b9",
+            "ByteDance": "#8e44ad",
+            "Tencent": "#16a085",
+            "iFlytek": "#d35400",
+            "Zhipu AI": "#c0392b",
+            "MiniMax": "#7f8c8d",
+            "Xiaomi": "#e74c3c"
+        };
+        
+        // 调整画布大小
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        // 加载数据
+        async function loadData() {
+            try {
+                const response = await fetch('../data/llm_timeline.json');
+                data = await response.json();
+                initGalaxies();
+                initLegend();
+                animate();
+            } catch (error) {
+                console.error('加载数据失败:', error);
+            }
+        }
+        
+        // 初始化星系
+        function initGalaxies() {
+            const companies = {};
+            data.forEach(item => {
+                if (item.org) {
+                    if (!companies[item.org]) {
+                        companies[item.org] = [];
+                    }
+                    companies[item.org].push(item);
+                }
+            });
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = Math.min(canvas.width, canvas.height) * 0.3;
+            
+            const companyNames = Object.keys(companies);
+            const angleStep = (Math.PI * 2) / companyNames.length;
+            
+            galaxies = companyNames.map((name, index) => {
+                const angle = angleStep * index;
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY + Math.sin(angle) * radius;
+                
+                return {
+                    name,
+                    x,
+                    y,
+                    targetX: x,
+                    targetY: y,
+                    models: companies[name],
+                    color: companyColors[name] || '#95a5a6',
+                    size: Math.max(30, Math.min(60, companies[name].length * 3)),
+                    angle: 0,
+                    orbitRadius: 50 + companies[name].length * 2
+                };
+            });
+        }
+        
+        // 初始化图例
+        function initLegend() {
+            const legend = document.getElementById('legend');
+            
+            legend.innerHTML = galaxies.map(galaxy => `
+                <div class="legend-item" onclick="selectGalaxy('${galaxy.name}')">
+                    <div class="legend-dot" style="background: ${galaxy.color}"></div>
+                    <span>${galaxy.name} (${galaxy.models.length})</span>
+                </div>
+            `).join('');
+        }
+        
+        // 选择星系
+        function selectGalaxy(name) {
+            selectedGalaxy = galaxies.find(g => g.name === name);
+            
+            if (selectedGalaxy) {
+                const panel = document.getElementById('infoPanel');
+                panel.classList.add('visible');
+                
+                document.getElementById('infoTitle').textContent = selectedGalaxy.name;
+                
+                document.getElementById('infoStats').innerHTML = `
+                    <div class="stat">
+                        <div class="stat-value" style="color: ${selectedGalaxy.color}">${selectedGalaxy.models.length}</div>
+                        <div class="stat-label">模型数量</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" style="color: ${selectedGalaxy.color}">${getLatestDate(selectedGalaxy.models)}</div>
+                        <div class="stat-label">最新发布</div>
+                    </div>
+                `;
+                
+                document.getElementById('modelList').innerHTML = selectedGalaxy.models
+                    .sort((a, b) => new Date(b.date) - new Date(a.date))
+                    .slice(0, 10)
+                    .map(model => `
+                        <div class="model-item">
+                            ${model.name} <span style="color: #8e8e8e">${model.date || ''}</span>
+                        </div>
+                    `).join('');
+            }
+        }
+        
+        // 获取最新日期
+        function getLatestDate(models) {
+            const dates = models.filter(m => m.date).map(m => m.date);
+            return dates.sort().pop() || 'N/A';
+        }
+        
+        // 设置模式
+        function setMode(newMode) {
+            mode = newMode;
+            
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 重新计算位置
+            if (mode === 'timeline') {
+                arrangeTimeline();
+            } else if (mode === 'force') {
+                arrangeForce();
+            } else {
+                arrangeOrbit();
+            }
+        }
+        
+        // 环绕模式布局
+        function arrangeOrbit() {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = Math.min(canvas.width, canvas.height) * 0.3;
+            
+            const angleStep = (Math.PI * 2) / galaxies.length;
+            
+            galaxies.forEach((galaxy, index) => {
+                const angle = angleStep * index;
+                galaxy.targetX = centerX + Math.cos(angle) * radius;
+                galaxy.targetY = centerY + Math.sin(angle) * radius;
+            });
+        }
+        
+        // 时间线模式布局
+        function arrangeTimeline() {
+            const padding = 100;
+            const width = canvas.width - padding * 2;
+            
+            galaxies.forEach((galaxy, index) => {
+                galaxy.targetX = padding + (width / (galaxies.length - 1)) * index;
+                galaxy.targetY = canvas.height / 2;
+            });
+        }
+        
+        // 力导向模式布局
+        function arrangeForce() {
+            // 简单的力导向布局
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            galaxies.forEach((galaxy, index) => {
+                const angle = (Math.PI * 2 / galaxies.length) * index;
+                const radius = 200 + galaxy.models.length * 5;
+                galaxy.targetX = centerX + Math.cos(angle) * radius;
+                galaxy.targetY = centerY + Math.sin(angle) * radius;
+            });
+        }
+        
+        // 绘制星系
+        function drawGalaxy(galaxy) {
+            const { x, y, name, models, color, size, angle, orbitRadius } = galaxy;
+            
+            // 绘制轨道
+            ctx.beginPath();
+            ctx.arc(x, y, orbitRadius, 0, Math.PI * 2);
+            ctx.strokeStyle = color + '30';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            
+            // 绘制中心（公司）
+            ctx.beginPath();
+            ctx.arc(x, y, size / 2, 0, Math.PI * 2);
+            
+            const gradient = ctx.createRadialGradient(x, y, 0, x, y, size / 2);
+            gradient.addColorStop(0, color);
+            gradient.addColorStop(1, color + '00');
+            
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            
+            // 绘制公司名称
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 14px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(name, x, y + size / 2 + 20);
+            
+            // 绘制模型（星球）
+            const modelCount = models.length;
+            models.forEach((model, modelIndex) => {
+                const modelAngle = angle + (Math.PI * 2 / modelCount) * modelIndex;
+                const modelX = x + Math.cos(modelAngle) * orbitRadius;
+                const modelY = y + Math.sin(modelAngle) * orbitRadius;
+                
+                const modelSize = 4 + Math.random() * 4;
+                
+                ctx.beginPath();
+                ctx.arc(modelX, modelY, modelSize, 0, Math.PI * 2);
+                ctx.fillStyle = color + '80';
+                ctx.fill();
+                
+                ctx.beginPath();
+                ctx.arc(modelX, modelY, modelSize + 2, 0, Math.PI * 2);
+                ctx.strokeStyle = color + '40';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+            });
+        }
+        
+        // 动画循环
+        function animate() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // 更新星系位置
+            galaxies.forEach(galaxy => {
+                galaxy.x += (galaxy.targetX - galaxy.x) * 0.05;
+                galaxy.y += (galaxy.targetY - galaxy.y) * 0.05;
+                galaxy.angle += 0.005;
+            });
+            
+            // 绘制所有星系
+            galaxies.forEach(drawGalaxy);
+            
+            // 绘制选中的星系高亮
+            if (selectedGalaxy) {
+                ctx.beginPath();
+                ctx.arc(selectedGalaxy.x, selectedGalaxy.y, selectedGalaxy.size + 10, 0, Math.PI * 2);
+                ctx.strokeStyle = selectedGalaxy.color + '60';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+            }
+            
+            animationFrame = requestAnimationFrame(animate);
+        }
+        
+        // 鼠标交互
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            let clickedGalaxy = null;
+            
+            galaxies.forEach(galaxy => {
+                const distance = Math.sqrt(
+                    Math.pow(x - galaxy.x, 2) + 
+                    Math.pow(y - galaxy.y, 2)
+                );
+                
+                if (distance < galaxy.size) {
+                    clickedGalaxy = galaxy;
+                }
+            });
+            
+            if (clickedGalaxy) {
+                selectGalaxy(clickedGalaxy.name);
+            } else {
+                selectedGalaxy = null;
+                document.getElementById('infoPanel').classList.remove('visible');
+            }
+        });
+        
+        // 窗口大小调整
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            if (mode === 'orbit') {
+                arrangeOrbit();
+            }
+        });
+        
+        // 初始化
+        resizeCanvas();
+        loadData();
+    </script>
+</body>
+</html>

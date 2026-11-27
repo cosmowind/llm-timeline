@@ -1,0 +1,128 @@
+[
+  {
+    "date": "2025-07-01",
+    "model": "GPT-5",
+    "org": "OpenAI",
+    "score": 75.0
+  },
+  {
+    "date": "2025-07-22",
+    "model": "Claude 4 Opus",
+    "org": "Anthropic",
+    "score": 72.0
+  },
+  {
+    "date": "2025-03-25",
+    "model": "Gemini 2.5 Pro",
+    "org": "Google",
+    "score": 68.0
+  },
+  {
+    "date": "2025-05-28",
+    "model": "DeepSeek V3.1",
+    "org": "DeepSeek",
+    "score": 60.0
+  },
+  {
+    "date": "2025-02-18",
+    "model": "Grok 3",
+    "org": "xAI",
+    "score": 55.0
+  },
+  {
+    "date": "2025-04-05",
+    "model": "Llama 4 Scout",
+    "org": "Meta",
+    "score": 50.0
+  },
+  {
+    "date": "2025-04-29",
+    "model": "Qwen 3",
+    "org": "阿里",
+    "score": 52.0
+  },
+  {
+    "date": "2025-10-01",
+    "model": "GLM-5",
+    "org": "智谱AI",
+    "score": 56.0
+  },
+  {
+    "date": "2026-04-23",
+    "model": "GPT-5.5",
+    "org": "OpenAI",
+    "score": 82.7
+  },
+  {
+    "date": "2026-04-16",
+    "model": "Claude Opus 4.7",
+    "org": "Anthropic",
+    "score": 80.0
+  },
+  {
+    "date": "2026-05-29",
+    "model": "Claude Opus 4.8",
+    "org": "Anthropic",
+    "score": 81.0
+  },
+  {
+    "date": "2026-04-01",
+    "model": "Gemini 3.1 Pro",
+    "org": "Google",
+    "score": 72.0
+  },
+  {
+    "date": "2026-03-24",
+    "model": "DeepSeek V4 Pro",
+    "org": "DeepSeek",
+    "score": 68.0
+  },
+  {
+    "date": "2026-04-14",
+    "model": "GPT-6 (未确认)",
+    "org": "OpenAI",
+    "score": 85.0
+  },
+  {
+    "date": "2026-04-16",
+    "model": "Qwen 3.6 Max",
+    "org": "阿里",
+    "score": 65.0
+  },
+  {
+    "date": "2026-04-01",
+    "model": "GLM-5.1",
+    "org": "智谱AI",
+    "score": 60.0
+  },
+  {
+    "date": "2026-04-10",
+    "model": "Kimi K2.6",
+    "org": "月之暗面",
+    "score": 66.0
+  },
+  {
+    "date": "2026-05-01",
+    "model": "豆包 Seed 2.0 Pro",
+    "org": "字节跳动",
+    "score": 58.0
+  },
+  {
+    "date": "2026-05-01",
+    "model": "混元 3 Preview",
+    "org": "腾讯",
+    "score": 55.0
+  },
+  {
+    "date": "2026-05-01",
+    "model": "文心 ERNIE 5.1",
+    "org": "百度",
+    "score": 52.0
+  },
+  {
+    "date": "2026-05-01",
+    "model": "星火 V4",
+    "org": "讯飞",
+    "score": 50.0
+  }
+]

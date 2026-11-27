@@ -1,0 +1,418 @@
+[
+  {
+    "model": "GPT-4o",
+    "org": "OpenAI",
+    "date": "2024-05-14",
+    "benchmarks": {
+      "MMLU": 86.5,
+      "HumanEval": 90.2,
+      "GPQA": 53.6,
+      "SWE-bench": 38.4,
+      "HellaSwag": 87.5,
+      "MATH": 76.6
+    }
+  },
+  {
+    "model": "Claude 3 Opus",
+    "org": "Anthropic",
+    "date": "2024-03-04",
+    "benchmarks": {
+      "MMLU": 87.3,
+      "HumanEval": 84.9,
+      "GPQA": 50.4,
+      "SWE-bench": 22.8,
+      "HellaSwag": 85.0,
+      "MATH": 60.0
+    }
+  },
+  {
+    "model": "Claude 3.5 Sonnet",
+    "org": "Anthropic",
+    "date": "2024-06-20",
+    "benchmarks": {
+      "MMLU": 88.7,
+      "HumanEval": 92.0,
+      "GPQA": 59.4,
+      "SWE-bench": 49.0,
+      "HellaSwag": 88.0,
+      "MATH": 71.0
+    }
+  },
+  {
+    "model": "Gemini 1.5 Pro",
+    "org": "Google",
+    "date": "2024-02-15",
+    "benchmarks": {
+      "MMLU": 85.9,
+      "HumanEval": 84.1,
+      "GPQA": 46.2,
+      "SWE-bench": 25.0,
+      "HellaSwag": 86.0,
+      "MATH": 67.0
+    }
+  },
+  {
+    "model": "Llama 3.1 405B",
+    "org": "Meta",
+    "date": "2024-07-23",
+    "benchmarks": {
+      "MMLU": 87.3,
+      "HumanEval": 89.0,
+      "GPQA": 51.1,
+      "SWE-bench": 32.0,
+      "HellaSwag": 87.0,
+      "MATH": 73.0
+    }
+  },
+  {
+    "model": "DeepSeek V2.5",
+    "org": "DeepSeek",
+    "date": "2024-09-05",
+    "benchmarks": {
+      "MMLU": 82.5,
+      "HumanEval": 81.0,
+      "GPQA": 42.0,
+      "SWE-bench": 18.0,
+      "HellaSwag": 82.0,
+      "MATH": 60.0
+    }
+  },
+  {
+    "model": "Grok 2",
+    "org": "xAI",
+    "date": "2024-08-13",
+    "benchmarks": {
+      "MMLU": 85.0,
+      "HumanEval": 82.0,
+      "GPQA": 48.0,
+      "SWE-bench": 28.0,
+      "HellaSwag": 84.0,
+      "MATH": 65.0
+    }
+  },
+  {
+    "model": "Qwen 2.5",
+    "org": "阿里",
+    "date": "2024-09-19",
+    "benchmarks": {
+      "MMLU": 83.0,
+      "HumanEval": 80.0,
+      "GPQA": 45.0,
+      "SWE-bench": 22.0,
+      "HellaSwag": 83.0,
+      "MATH": 68.0
+    }
+  },
+  {
+    "model": "GLM-4",
+    "org": "智谱AI",
+    "date": "2024-01-16",
+    "benchmarks": {
+      "MMLU": 82.0,
+      "HumanEval": 78.0,
+      "GPQA": 40.0,
+      "SWE-bench": 15.0,
+      "HellaSwag": 81.0,
+      "MATH": 58.0
+    }
+  },
+  {
+    "model": "GPT-5",
+    "org": "OpenAI",
+    "date": "2025-07-01",
+    "benchmarks": {
+      "MMLU": 90.2,
+      "HumanEval": 93.5,
+      "GPQA": 71.4,
+      "SWE-bench": 74.9,
+      "HellaSwag": 90.0,
+      "MATH": 82.0,
+      "Terminal-Bench": 75.0
+    }
+  },
+  {
+    "model": "Claude 4 Opus",
+    "org": "Anthropic",
+    "date": "2025-07-22",
+    "benchmarks": {
+      "MMLU": 91.0,
+      "HumanEval": 94.2,
+      "GPQA": 72.0,
+      "SWE-bench": 72.5,
+      "HellaSwag": 89.0,
+      "MATH": 80.0,
+      "Terminal-Bench": 72.0
+    }
+  },
+  {
+    "model": "Gemini 2.5 Pro",
+    "org": "Google",
+    "date": "2025-03-25",
+    "benchmarks": {
+      "MMLU": 89.5,
+      "HumanEval": 91.0,
+      "GPQA": 68.5,
+      "SWE-bench": 63.8,
+      "HellaSwag": 88.0,
+      "MATH": 78.0,
+      "Terminal-Bench": 68.0
+    }
+  },
+  {
+    "model": "DeepSeek V3.1",
+    "org": "DeepSeek",
+    "date": "2025-05-28",
+    "benchmarks": {
+      "MMLU": 87.0,
+      "HumanEval": 88.5,
+      "GPQA": 59.0,
+      "SWE-bench": 55.0,
+      "HellaSwag": 86.0,
+      "MATH": 75.0,
+      "Terminal-Bench": 60.0
+    }
+  },
+  {
+    "model": "Grok 3",
+    "org": "xAI",
+    "date": "2025-02-18",
+    "benchmarks": {
+      "MMLU": 86.5,
+      "HumanEval": 86.0,
+      "GPQA": 55.0,
+      "SWE-bench": 48.0,
+      "HellaSwag": 85.0,
+      "MATH": 72.0,
+      "Terminal-Bench": 55.0
+    }
+  },
+  {
+    "model": "Llama 4 Scout",
+    "org": "Meta",
+    "date": "2025-04-05",
+    "benchmarks": {
+      "MMLU": 85.0,
+      "HumanEval": 87.0,
+      "GPQA": 52.0,
+      "SWE-bench": 42.0,
+      "HellaSwag": 84.0,
+      "MATH": 70.0,
+      "Terminal-Bench": 50.0
+    }
+  },
+  {
+    "model": "Qwen 3",
+    "org": "阿里",
+    "date": "2025-04-29",
+    "benchmarks": {
+      "MMLU": 86.0,
+      "HumanEval": 85.0,
+      "GPQA": 55.0,
+      "SWE-bench": 45.0,
+      "HellaSwag": 85.0,
+      "MATH": 73.0,
+      "Terminal-Bench": 52.0
+    }
+  },
+  {
+    "model": "GLM-5",
+    "org": "智谱AI",
+    "date": "2025-10-01",
+    "benchmarks": {
+      "MMLU": 87.0,
+      "HumanEval": 86.0,
+      "GPQA": 58.0,
+      "SWE-bench": 50.0,
+      "HellaSwag": 86.0,
+      "MATH": 74.0,
+      "Terminal-Bench": 56.0
+    }
+  },
+  {
+    "model": "GPT-5.5",
+    "org": "OpenAI",
+    "date": "2026-04-23",
+    "benchmarks": {
+      "MMLU": 92.5,
+      "HumanEval": 92.1,
+      "GPQA": 78.0,
+      "SWE-bench": 82.7,
+      "Terminal-Bench": 82.7,
+      "HellaSwag": 91.0,
+      "MATH": 85.0,
+      "MLE-Bench": 75.0
+    }
+  },
+  {
+    "model": "Claude Opus 4.7",
+    "org": "Anthropic",
+    "date": "2026-04-16",
+    "benchmarks": {
+      "MMLU": 91.5,
+      "HumanEval": 95.0,
+      "GPQA": 76.0,
+      "SWE-bench": 80.9,
+      "SWE-bench Pro": 64.3,
+      "Terminal-Bench": 80.0,
+      "HellaSwag": 90.0,
+      "MATH": 83.0
+    }
+  },
+  {
+    "model": "Claude Opus 4.8",
+    "org": "Anthropic",
+    "date": "2026-05-29",
+    "benchmarks": {
+      "MMLU": 92.0,
+      "HumanEval": 95.5,
+      "GPQA": 77.0,
+      "SWE-bench": 82.0,
+      "Terminal-Bench": 81.0,
+      "HellaSwag": 90.5,
+      "MATH": 84.0
+    }
+  },
+  {
+    "model": "Gemini 3.1 Pro",
+    "org": "Google",
+    "date": "2026-04-01",
+    "benchmarks": {
+      "MMLU": 90.0,
+      "HumanEval": 90.0,
+      "GPQA": 94.3,
+      "SWE-bench": 70.0,
+      "Terminal-Bench": 72.0,
+      "HellaSwag": 89.0,
+      "MATH": 80.0
+    }
+  },
+  {
+    "model": "DeepSeek V4 Pro",
+    "org": "DeepSeek",
+    "date": "2026-03-24",
+    "benchmarks": {
+      "MMLU": 89.0,
+      "HumanEval": 85.6,
+      "GPQA": 70.0,
+      "SWE-bench": 72.0,
+      "Terminal-Bench": 68.0,
+      "HellaSwag": 87.0,
+      "MATH": 78.0
+    }
+  },
+  {
+    "model": "GPT-6 (未确认)",
+    "org": "OpenAI",
+    "date": "2026-04-14",
+    "benchmarks": {
+      "MMLU": 93.0,
+      "HumanEval": 94.0,
+      "GPQA": 80.0,
+      "SWE-bench": 85.0,
+      "Terminal-Bench": 85.0,
+      "HellaSwag": 92.0,
+      "MATH": 87.0,
+      "MLE-Bench": 78.0
+    },
+    "note": "来源为泄露信息，OpenAI官方未确认"
+  },
+  {
+    "model": "Qwen 3.6 Max",
+    "org": "阿里",
+    "date": "2026-04-16",
+    "benchmarks": {
+      "MMLU": 88.0,
+      "HumanEval": 87.0,
+      "GPQA": 65.0,
+      "SWE-bench": 73.4,
+      "Terminal-Bench": 65.0,
+      "HellaSwag": 87.0,
+      "MATH": 76.0
+    }
+  },
+  {
+    "model": "GLM-5.1",
+    "org": "智谱AI",
+    "date": "2026-04-01",
+    "benchmarks": {
+      "MMLU": 87.0,
+      "HumanEval": 86.0,
+      "GPQA": 62.0,
+      "SWE-bench": 58.9,
+      "Terminal-Bench": 60.0,
+      "HellaSwag": 86.0,
+      "MATH": 74.0
+    }
+  },
+  {
+    "model": "Kimi K2.6",
+    "org": "月之暗面",
+    "date": "2026-04-10",
+    "benchmarks": {
+      "MMLU": 88.5,
+      "HumanEval": 88.0,
+      "GPQA": 68.0,
+      "SWE-bench": 70.0,
+      "Terminal-Bench": 66.0,
+      "HellaSwag": 87.0,
+      "MATH": 77.0
+    }
+  },
+  {
+    "model": "豆包 Seed 2.0 Pro",
+    "org": "字节跳动",
+    "date": "2026-05-01",
+    "benchmarks": {
+      "MMLU": 87.0,
+      "HumanEval": 85.0,
+      "GPQA": 60.0,
+      "SWE-bench": 55.0,
+      "Terminal-Bench": 58.0,
+      "HellaSwag": 86.0,
+      "MATH": 73.0,
+      "MMMU-Pro": 68.7
+    }
+  },
+  {
+    "model": "混元 3 Preview",
+    "org": "腾讯",
+    "date": "2026-05-01",
+    "benchmarks": {
+      "MMLU": 86.0,
+      "HumanEval": 84.0,
+      "GPQA": 58.0,
+      "SWE-bench": 50.0,
+      "Terminal-Bench": 55.0,
+      "HellaSwag": 85.0,
+      "MATH": 72.0
+    }
+  },
+  {
+    "model": "文心 ERNIE 5.1",
+    "org": "百度",
+    "date": "2026-05-01",
+    "benchmarks": {
+      "MMLU": 85.0,
+      "HumanEval": 83.0,
+      "GPQA": 55.0,
+      "SWE-bench": 48.0,
+      "Terminal-Bench": 52.0,
+      "HellaSwag": 84.0,
+      "MATH": 70.0
+    }
+  },
+  {
+    "model": "星火 V4",
+    "org": "讯飞",
+    "date": "2026-05-01",
+    "benchmarks": {
+      "MMLU": 84.0,
+      "HumanEval": 82.0,
+      "GPQA": 52.0,
+      "SWE-bench": 45.0,
+      "Terminal-Bench": 50.0,
+      "HellaSwag": 83.0,
+      "MATH": 68.0
+    }
+  }
+]
